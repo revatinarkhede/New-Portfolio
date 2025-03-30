@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Progress - My Portfolio</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #f5f5f5;">
+    <!-- Header Section -->
+    <header style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; padding: 2rem; text-align: center;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; max-width: 800px; margin: 0 auto;">
+            <div style="flex: 0 0 200px;">
+                <img src="./image.jpg" alt="Profile Picture" style="width: 200px; height: 200px; border-radius: 50%; border: 5px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+            </div>
+            <div style="flex: 1; text-align: left;">
+                <h1 style="margin: 0; font-size: 2.5rem;">Revati Narkhede</h1>
+                <p style="margin: 0.5rem 0; font-size: 1.2rem;">Web Development Progress</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+        <!-- Navigation -->
+        <nav style="margin-bottom: 2rem;">
+            <a href="index.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <span style="font-size: 1.2rem;">←</span> Back to Portfolio
+            </a>
+        </nav>
+
+        <!-- Web Development Progress Section -->
+        <section style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: #2c3e50; margin-top: 0; position: relative; padding-bottom: 0.5rem;">
+                    Web Development Progress
+                    <div style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #3498db, #2ecc71); border-radius: 3px;"></div>
+                </h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Day 1 -->
+                <div class="card fade-in" style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 5px; background-color: #f8f9fa;">
+                    <div style="margin-bottom: 1rem; position: relative; overflow: hidden; border-radius: 5px;">
+                        <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=500&h=300&fit=crop" alt="HTML Code" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);"></div>
+                    </div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Day 1</h3>
+                    <p style="margin: 0.5rem 0;">HTML Structure & Elements</p>
+                    <div class="progress-bar"></div>
+                    <div style="margin-top: 1rem;">
+                        <a href="web-development-reports/day1.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: #f8f9fa; transition: background-color 0.3s ease;">
+                            <span style="font-size: 1.2rem;">📄</span> View Detailed Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="card fade-in" style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 5px; background-color: #f8f9fa;">
+                    <div style="margin-bottom: 1rem; position: relative; overflow: hidden; border-radius: 5px;">
+                        <img src="./web-development-reports/css1.jpg" alt="CSS Styling" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);"></div>
+                    </div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Day 2</h3>
+                    <p style="margin: 0.5rem 0;">CSS Styling & Layout</p>
+                    <div class="progress-bar"></div>
+                    <div style="margin-top: 1rem;">
+                        <a href="web-development-reports/day2.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: #f8f9fa; transition: background-color 0.3s ease;">
+                            <span style="font-size: 1.2rem;">📄</span> View Detailed Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; text-align: center; padding: 1rem; margin-top: 2rem;">
+        <p style="margin: 0;">© 2024 Revati. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

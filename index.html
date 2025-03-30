@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Portfolio</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        .card:hover::before {
+            transform: translateX(100%);
+        }
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #f5f5f5;">
+    <!-- Header Section -->
+    <header style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop') center/cover; opacity: 0.1;"></div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3rem; max-width: 1200px; margin: 0 auto; position: relative;">
+            <div style="flex: 0 0 250px;" class="float">
+                <img src="image.jpg" alt="Profile Picture" style="width: 200px; height: 200px; border-radius: 50%; border: 5px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+            </div>
+            <div style="flex: 1; text-align: left;">
+                <h1 style="margin: 0; font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Revati Narkhede</h1>
+                <p style="margin: 1rem 0; font-size: 1.5rem; opacity: 0.9;">About Me</p>
+                <p style="margin: 0; font-size: 1.2rem; opacity: 0.8;">Hello!! Myself Revati Narkhede, First year student
+                    perceiving Electronics and Telecommunication degree
+                    at SSGMCE,Shegoan, eager to learn about different
+                    software related concepts and to apply them.
+                    Currently learning HTML, CSS and Javascript at
+                    Digital Fabrication Lab,SSGMCE.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;">
+        <!-- Navigation -->
+        <nav style="margin-bottom: 3rem; display: flex; gap: 2rem; justify-content: center;">
+            <a href="#web-development" class="nav-link" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem;">Web Development</a>
+            <a href="#cad" class="nav-link" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem;">CAD</a>
+            <a href="#3d-printing" class="nav-link" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem;">3D Printing</a>
+        </nav>
+
+        <!-- Web Development Section -->
+        <section id="web-development" style="margin-bottom: 4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: #2c3e50; margin: 0; position: relative; padding-bottom: 0.5rem; font-size: 2.5rem;">
+                    Web Development
+                    <div style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #3498db, #2ecc71); border-radius: 3px;"></div>
+                </h2>
+                <a href="web-development.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <span style="font-size: 1.2rem;">→</span> View Progress
+                </a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">🌐</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">HTML & CSS</h3>
+                    <p style="color: #666;">Learning the fundamentals of web development with HTML structure and CSS styling.</p>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">🎨</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Responsive Design</h3>
+                    <p style="color: #666;">Creating mobile-friendly layouts and responsive web applications.</p>
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAD Section -->
+        <section id="cad" style="margin-bottom: 4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: #2c3e50; margin: 0; position: relative; padding-bottom: 0.5rem; font-size: 2.5rem;">
+                    CAD Design
+                    <div style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #3498db, #2ecc71); border-radius: 3px;"></div>
+                </h2>
+                <a href="cad.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <span style="font-size: 1.2rem;">→</span> View Progress
+                </a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">📐</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">2D Design</h3>
+                    <p style="color: #666;">Mastering 2D CAD tools and creating precise technical drawings.</p>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">🔲</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">3D Modeling</h3>
+                    <p style="color: #666;">Creating complex 3D models and assemblies using CAD software.</p>
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Printing Section -->
+        <section id="3d-printing" style="margin-bottom: 4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: #2c3e50; margin: 0; position: relative; padding-bottom: 0.5rem; font-size: 2.5rem;">
+                    3D Printing
+                    <div style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #3498db, #2ecc71); border-radius: 3px;"></div>
+                </h2>
+                <a href="3d-printing.html" style="color: #3498db; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <span style="font-size: 1.2rem;">→</span> View Progress
+                </a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">🖨️</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Printer Setup</h3>
+                    <p style="color: #666;">Learning to set up and maintain 3D printers for optimal performance.</p>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="card fade-in" style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div class="module-icon">🎯</div>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Print Optimization</h3>
+                    <p style="color: #666;">Optimizing print settings and troubleshooting common issues.</p>
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; text-align: center; padding: 2rem; margin-top: 4rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="margin: 0; font-size: 1.1rem;">© 2024 Revati. All rights reserved.</p>
+            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem;">
+                <a href="#" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease;">GitHub</a>
+                <a href="#" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease;">LinkedIn</a>
+                <a href="#" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease;">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html> 
